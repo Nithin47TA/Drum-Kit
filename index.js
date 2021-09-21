@@ -1,67 +1,60 @@
-
-
 var noOfbutton = document.querySelectorAll(".drum").length;
 for (var i = 0; i < noOfbutton; i++) {
-    document.querySelectorAll(".drum")[i].addEventListener("click", function () {
-        var buttonvalue = this.innerHTML;
-        sound(buttonvalue);
-        keyPressed(buttonvalue);
-       
-    });
-
+  document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+    var buttonvalue = this.innerHTML;
+    sound(buttonvalue);
+    keyPressed(buttonvalue);
+  });
 }
-$(document).keydown(function(event)
-{sound(event.key)
-keyPressed(event.key);
-}
-);
+$(document).keydown(function (event) {
+  sound(event.key);
+  keyPressed(event.key);
+});
 
-function sound(key){
-    switch (key) {
-        case "w":
-            new Audio("sounds/tom-1.mp3").play();
+function sound(key) {
+  switch (key) {
+    case "w":
+      new Audio("sounds/tom-1.mp3").play();
 
-            break;
+      break;
 
-        case "a":
-            new Audio("sounds/tom-2.mp3").play();
+    case "a":
+      new Audio("sounds/tom-2.mp3").play();
 
-            break;
+      break;
 
-        case "s":
-            new Audio("sounds/tom-3.mp3").play();
+    case "s":
+      new Audio("sounds/tom-3.mp3").play();
 
-            break;
+      break;
 
-        case "d":
-            new Audio("sounds/tom-4.mp3").play();
+    case "d":
+      new Audio("sounds/tom-4.mp3").play();
 
-            break;
+      break;
 
-        case "j":
-            new Audio("sounds/crash.mp3").play();
+    case "j":
+      new Audio("sounds/crash.mp3").play();
 
-            break;
+      break;
 
-        case "k":
-            new Audio("sounds/kick-bass.mp3").play();
+    case "k":
+      new Audio("sounds/kick-bass.mp3").play();
 
-            break;
-        case "l":
-            new Audio("sounds/snare.mp3").play();
+      break;
+    case "l":
+      new Audio("sounds/snare.mp3").play();
 
-            break;
-        default:
-            console.log("hai");
-            break;
-    }
+      break;
+    default:
+      console.log("hai");
+      break;
+  }
 }
 
-function keyPressed(key){
-
-document.querySelector("."+key).classList.add("pressed");
-setTimeout(function(){
-    document.querySelector("."+key).classList.remove("pressed");
-},100);
-
+function keyPressed(key) {
+  document.querySelector("." + key).classList.add("pressed");
+  setTimeout(function () {
+    document.querySelector("." + key).classList.remove("pressed");
+  }, 100);
 }
